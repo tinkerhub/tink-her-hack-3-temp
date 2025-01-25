@@ -22,6 +22,8 @@ class BloodBankApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
 
       title: 'Blood Bank Management',
 
