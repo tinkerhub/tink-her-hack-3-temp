@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const BloodBankApp());
 }
 
@@ -32,14 +37,33 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _isLoading = false;
 
-  void _login() {
+  void _login() async {
     if (_formKey.currentState!.validate()) {
-      // Simple login logic - just proceed to role selection
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const RoleSelectionPage()),
-      );
+      setState(() {
+        _isLoading = true;
+      });
+      
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text,
+        );
+        
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const RoleSelectionPage()),
+        );
+      } on FirebaseAuthException catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.message ?? 'Login failed')),
+        );
+      } finally {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -59,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) => 
                     value?.isEmpty ?? true ? 'Please enter email' : null,
+                keyboardType: TextInputType.emailAddress,
               ),
               TextFormField(
                 controller: _passwordController,
@@ -68,10 +93,12 @@ class _LoginPageState extends State<LoginPage> {
                     value?.isEmpty ?? true ? 'Please enter password' : null,
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _login,
-                child: const Text('Login'),
-              ),
+              _isLoading 
+                ? const CircularProgressIndicator()
+                : ElevatedButton(
+                    onPressed: _login,
+                    child: const Text('Login'),
+                  ),
               TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -127,25 +154,55 @@ class _RegisterPageState extends State<RegisterPage> {
   final _addressController = TextEditingController();
   final _phoneController = TextEditingController();
   final _lastDonationController = TextEditingController();
+  bool _isLoading = false;
 
-  void _register() {
+  void _register() async {
     if (_formKey.currentState!.validate()) {
-      // Create user data object
-      final userData = UserData(
-        name: _nameController.text,
-        bloodGroup: _bloodGroupController.text,
-        age: _ageController.text,
-        weight: _weightController.text,
-        address: _addressController.text,
-        phone: _phoneController.text,
-        lastDonation: _lastDonationController.text,
-      );
+      setState(() {
+        _isLoading = true;
+      });
 
-      // Navigate back to login page
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      );
+      try {
+        // Create user account with Firebase Auth
+        UserCredential userCredential = 
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text,
+        );
+
+        // Save additional user data to Firestore
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userCredential.user!.uid)
+            .set({
+          'name': _nameController.text,
+          'email': _emailController.text.trim(),
+          'bloodGroup': _bloodGroupController.text,
+          'age': _ageController.text,
+          'weight': _weightController.text,
+          'address': _addressController.text,
+          'phone': _phoneController.text,
+          'lastDonation': _lastDonationController.text,
+          'createdAt': FieldValue.serverTimestamp(),
+        });
+
+        // Show success message and navigate back to login
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Registration successful!')),
+        );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+        );
+      } on FirebaseAuthException catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.message ?? 'Registration failed')),
+        );
+      } finally {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -168,15 +225,30 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
-                validator: (value) => 
-                    value?.isEmpty ?? true ? 'Please enter email' : null,
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return 'Please enter email';
+                  }
+                  if (!value!.contains('@')) {
+                    return 'Please enter a valid email';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.emailAddress,
               ),
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
-                validator: (value) => 
-                    value?.isEmpty ?? true ? 'Please enter password' : null,
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return 'Please enter password';
+                  }
+                  if (value!.length < 6) {
+                    return 'Password must be at least 6 characters';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 controller: _bloodGroupController,
@@ -228,10 +300,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _register,
-                child: const Text('Register'),
-              ),
+              _isLoading 
+                ? const CircularProgressIndicator()
+                : ElevatedButton(
+                    onPressed: _register,
+                    child: const Text('Register'),
+                  ),
             ],
           ),
         ),
