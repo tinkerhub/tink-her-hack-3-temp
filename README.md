@@ -1,14 +1,14 @@
-# [Project Name] 🎯
+# e-Kalavara 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Devss
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Nandhana C B - NSS college of engineering
+- Member 2: Megha K A - NSS college of engineering
+- Member 3: Riya S - NSS college of engineering
 
 ### Hosted Project Link
 [mention your project hosted project link here]
