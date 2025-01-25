@@ -1,772 +1,460 @@
 import 'package:flutter/material.dart';
-import 'models/blood_bank.dart';
-
-
 
 void main() {
-
   runApp(const BloodBankApp());
-
 }
-
-
 
 class BloodBankApp extends StatelessWidget {
-
   const BloodBankApp({super.key});
 
-
-
   @override
-
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-
       title: 'Blood Bank Management',
-
       theme: ThemeData(
-
         primarySwatch: Colors.red,
-
         useMaterial3: true,
-
       ),
-
-      home: const BloodBankHome(),
-
+      home: const LoginPage(),
     );
-
   }
-
 }
 
-
-
-class BloodBankHome extends StatefulWidget {
-
-  const BloodBankHome({super.key});
-
-
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-
-  State<BloodBankHome> createState() => _BloodBankHomeState();
-
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-
-
-class _BloodBankHomeState extends State<BloodBankHome> {
-
-  final BloodBank bloodBank = BloodBank();
-
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
-  
-
-  // Controllers for donor form
-
-  final _donorIdController = TextEditingController();
-
-  final _nameController = TextEditingController();
-
-  final _bloodTypeController = TextEditingController();
-
-  final _contactController = TextEditingController();
-
-  final _unitsController = TextEditingController();
-
-
-
-  // Additional controllers for acceptor form
-
-  final _reasonController = TextEditingController();
-
-  final _unitsNeededController = TextEditingController();
-
-
-
-  void _showMessage(String message) {
-
-    ScaffoldMessenger.of(context).showSnackBar(
-
-      SnackBar(content: Text(message)),
-
-    );
-
+  void _login() {
+    if (_formKey.currentState!.validate()) {
+      // Simple login logic - just proceed to role selection
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const RoleSelectionPage()),
+      );
+    }
   }
-
-
-
-  void _showAddDonorDialog() {
-
-    showDialog(
-
-      context: context,
-
-      builder: (context) => AlertDialog(
-
-        title: const Text('Add Donor'),
-
-        content: Form(
-
-          key: _formKey,
-
-          child: Column(
-
-            mainAxisSize: MainAxisSize.min,
-
-            children: [
-
-              TextFormField(
-
-                controller: _donorIdController,
-
-                decoration: const InputDecoration(labelText: 'Donor ID'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter donor ID' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _nameController,
-
-                decoration: const InputDecoration(labelText: 'Name'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter name' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _bloodTypeController,
-
-                decoration: const InputDecoration(
-
-                    labelText: 'Blood Type (A+/A-/B+/B-/AB+/AB-/O+/O-)'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter blood type' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _contactController,
-
-                decoration: const InputDecoration(labelText: 'Contact'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter contact' : null,
-
-              ),
-
-            ],
-
-          ),
-
-        ),
-
-        actions: [
-
-          TextButton(
-
-            onPressed: () => Navigator.pop(context),
-
-            child: const Text('Cancel'),
-
-          ),
-
-          TextButton(
-
-            onPressed: () {
-
-              if (_formKey.currentState?.validate() ?? false) {
-
-                final message = bloodBank.addDonor(
-
-                  _donorIdController.text,
-
-                  _nameController.text,
-
-                  _bloodTypeController.text,
-
-                  _contactController.text,
-
-                );
-
-                Navigator.pop(context);
-
-                _showMessage(message);
-
-                _clearControllers();
-
-              }
-
-            },
-
-            child: const Text('Add'),
-
-          ),
-
-        ],
-
-      ),
-
-    );
-
-  }
-
-
-
-  void _showAddBloodUnitsDialog() {
-
-    showDialog(
-
-      context: context,
-
-      builder: (context) => AlertDialog(
-
-        title: const Text('Add Blood Units'),
-
-        content: Form(
-
-          key: _formKey,
-
-          child: Column(
-
-            mainAxisSize: MainAxisSize.min,
-
-            children: [
-
-              TextFormField(
-
-                controller: _bloodTypeController,
-
-                decoration: const InputDecoration(
-
-                    labelText: 'Blood Type (A+/A-/B+/B-/AB+/AB-/O+/O-)'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter blood type' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _unitsController,
-
-                decoration: const InputDecoration(labelText: 'Units'),
-
-                keyboardType: TextInputType.number,
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter units' : null,
-
-              ),
-
-            ],
-
-          ),
-
-        ),
-
-        actions: [
-
-          TextButton(
-
-            onPressed: () => Navigator.pop(context),
-
-            child: const Text('Cancel'),
-
-          ),
-
-          TextButton(
-
-            onPressed: () {
-
-              if (_formKey.currentState?.validate() ?? false) {
-
-                final message = bloodBank.addBloodUnit(
-
-                  _bloodTypeController.text,
-
-                  int.parse(_unitsController.text),
-
-                );
-
-                Navigator.pop(context);
-
-                _showMessage(message);
-
-                setState(() {});
-
-                _clearControllers();
-
-              }
-
-            },
-
-            child: const Text('Add'),
-
-          ),
-
-        ],
-
-      ),
-
-    );
-
-  }
-
-
-
-  void _showBloodCompatibilityDialog() {
-
-    showDialog(
-
-      context: context,
-
-      builder: (context) => AlertDialog(
-
-        title: const Text('Blood Type Compatibility'),
-
-        content: Form(
-
-          key: _formKey,
-
-          child: TextFormField(
-
-            controller: _bloodTypeController,
-
-            decoration: const InputDecoration(
-
-                labelText: 'Enter Blood Type (A+/A-/B+/B-/AB+/AB-/O+/O-)'),
-
-            validator: (value) =>
-
-                value?.isEmpty ?? true ? 'Please enter blood type' : null,
-
-          ),
-
-        ),
-
-        actions: [
-
-          TextButton(
-
-            onPressed: () => Navigator.pop(context),
-
-            child: const Text('Cancel'),
-
-          ),
-
-          TextButton(
-
-            onPressed: () {
-
-              if (_formKey.currentState?.validate() ?? false) {
-
-                final compatibleTypes = 
-
-                    bloodBank.getCompatibleRecipients(_bloodTypeController.text);
-
-                Navigator.pop(context);
-
-                _showMessage(
-
-                    'Compatible recipients: ${compatibleTypes.join(", ")}');
-
-                _clearControllers();
-
-              }
-
-            },
-
-            child: const Text('Check'),
-
-          ),
-
-        ],
-
-      ),
-
-    );
-
-  }
-
-
-
-  void _showAddAcceptorDialog() {
-
-    showDialog(
-
-      context: context,
-
-      builder: (context) => AlertDialog(
-
-        title: const Text('Register Blood Request'),
-
-        content: Form(
-
-          key: _formKey,
-
-          child: Column(
-
-            mainAxisSize: MainAxisSize.min,
-
-            children: [
-
-              TextFormField(
-
-                controller: _donorIdController,
-
-                decoration: const InputDecoration(labelText: 'Acceptor ID'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter acceptor ID' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _nameController,
-
-                decoration: const InputDecoration(labelText: 'Name'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter name' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _bloodTypeController,
-
-                decoration: const InputDecoration(
-
-                    labelText: 'Blood Type (A+/A-/B+/B-/AB+/AB-/O+/O-)'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter blood type' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _contactController,
-
-                decoration: const InputDecoration(labelText: 'Contact'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter contact' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _reasonController,
-
-                decoration: const InputDecoration(labelText: 'Reason for Request'),
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter reason' : null,
-
-              ),
-
-              TextFormField(
-
-                controller: _unitsNeededController,
-
-                decoration: const InputDecoration(labelText: 'Units Needed'),
-
-                keyboardType: TextInputType.number,
-
-                validator: (value) =>
-
-                    value?.isEmpty ?? true ? 'Please enter units needed' : null,
-
-              ),
-
-            ],
-
-          ),
-
-        ),
-
-        actions: [
-
-          TextButton(
-
-            onPressed: () => Navigator.pop(context),
-
-            child: const Text('Cancel'),
-
-          ),
-
-          TextButton(
-
-            onPressed: () {
-
-              if (_formKey.currentState?.validate() ?? false) {
-
-                final message = bloodBank.addAcceptor(
-
-                  _donorIdController.text,
-
-                  _nameController.text,
-
-                  _bloodTypeController.text,
-
-                  _contactController.text,
-
-                  _reasonController.text,
-
-                  int.parse(_unitsNeededController.text),
-
-                );
-
-                Navigator.pop(context);
-
-                _showMessage(message);
-
-                _clearControllers();
-
-              }
-
-            },
-
-            child: const Text('Register'),
-
-          ),
-
-        ],
-
-      ),
-
-    );
-
-  }
-
-
-
-  void _clearControllers() {
-
-    _donorIdController.clear();
-
-    _nameController.clear();
-
-    _bloodTypeController.clear();
-
-    _contactController.clear();
-
-    _unitsController.clear();
-
-    _reasonController.clear();
-
-    _unitsNeededController.clear();
-
-  }
-
-
 
   @override
-
-  void dispose() {
-
-    _donorIdController.dispose();
-
-    _nameController.dispose();
-
-    _bloodTypeController.dispose();
-
-    _contactController.dispose();
-
-    _unitsController.dispose();
-
-    _reasonController.dispose();
-
-    _unitsNeededController.dispose();
-
-    super.dispose();
-
-  }
-
-
-
-  @override
-
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Blood Bank Login')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(labelText: 'Email'),
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter email' : null,
+              ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter password' : null,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _login,
+                child: const Text('Login'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RegisterPage()),
+                  );
+                },
+                child: const Text('Create Account'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class UserData {
+  final String name;
+  final String bloodGroup;
+  final String age;
+  final String weight;
+  final String address;
+  final String phone;
+  final String lastDonation;
+
+  UserData({
+    required this.name,
+    required this.bloodGroup,
+    required this.age,
+    required this.weight,
+    required this.address,
+    required this.phone,
+    required this.lastDonation,
+  });
+}
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _bloodGroupController = TextEditingController();
+  final _ageController = TextEditingController();
+  final _weightController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _lastDonationController = TextEditingController();
+
+  void _register() {
+    if (_formKey.currentState!.validate()) {
+      // Create user data object
+      final userData = UserData(
+        name: _nameController.text,
+        bloodGroup: _bloodGroupController.text,
+        age: _ageController.text,
+        weight: _weightController.text,
+        address: _addressController.text,
+        phone: _phoneController.text,
+        lastDonation: _lastDonationController.text,
+      );
+
+      // Navigate back to login page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginPage()),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Create Account')),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _nameController,
+                decoration: const InputDecoration(labelText: 'Name'),
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter name' : null,
+              ),
+              TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(labelText: 'Email'),
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter email' : null,
+              ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter password' : null,
+              ),
+              TextFormField(
+                controller: _bloodGroupController,
+                decoration: const InputDecoration(labelText: 'Blood Group'),
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter blood group' : null,
+              ),
+              TextFormField(
+                controller: _ageController,
+                decoration: const InputDecoration(labelText: 'Age'),
+                keyboardType: TextInputType.number,
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter age' : null,
+              ),
+              TextFormField(
+                controller: _weightController,
+                decoration: const InputDecoration(labelText: 'Weight'),
+                keyboardType: TextInputType.number,
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter weight' : null,
+              ),
+              TextFormField(
+                controller: _addressController,
+                decoration: const InputDecoration(labelText: 'Address'),
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter address' : null,
+              ),
+              TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(labelText: 'Phone Number'),
+                keyboardType: TextInputType.phone,
+                validator: (value) => 
+                    value?.isEmpty ?? true ? 'Please enter phone number' : null,
+              ),
+              TextFormField(
+                controller: _lastDonationController,
+                decoration: const InputDecoration(labelText: 'Last Donation Date'),
+                onTap: () async {
+                  DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime.now(),
+                  );
+                  if (pickedDate != null) {
+                    _lastDonationController.text = 
+                        pickedDate.toLocal().toString().split(' ')[0];
+                  }
+                },
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _register,
+                child: const Text('Register'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class RoleSelectionPage extends StatelessWidget {
+  const RoleSelectionPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Select Role'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DonorPage()),
+                );
+              },
+              child: const Text('Donor'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AcceptorPage()),
+                );
+              },
+              child: const Text('Acceptor'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DonorPage extends StatelessWidget {
+  const DonorPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Sample user data (in real app, this would come from a database)
+    final userData = UserData(
+      name: "John Doe",
+      bloodGroup: "A+",
+      age: "25",
+      weight: "70",
+      address: "123 Main St",
+      phone: "1234567890",
+      lastDonation: "2024-01-01",
+    );
 
     return Scaffold(
-
       appBar: AppBar(
-
-        title: const Text('Blood Bank Management'),
-
+        title: const Text('Donor Profile'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('No new notifications')),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Edit profile coming soon')),
+              );
+            },
+          ),
+        ],
       ),
-
       body: Padding(
-
         padding: const EdgeInsets.all(16.0),
-
         child: Column(
-
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            Row(
-
-              children: [
-
-                Expanded(
-
-                  child: ElevatedButton(
-
-                    onPressed: _showAddDonorDialog,
-
-                    child: const Text('Register as Donor'),
-
-                  ),
-
-                ),
-
-                const SizedBox(width: 8),
-
-                Expanded(
-
-                  child: ElevatedButton(
-
-                    onPressed: _showAddAcceptorDialog,
-
-                    child: const Text('Request Blood'),
-
-                  ),
-
-                ),
-
-              ],
-
-            ),
-
-            const SizedBox(height: 8),
-
-            ElevatedButton(
-
-              onPressed: _showAddBloodUnitsDialog,
-
-              child: const Text('Add Blood Units'),
-
-            ),
-
-            const SizedBox(height: 8),
-
-            ElevatedButton(
-
-              onPressed: _showBloodCompatibilityDialog,
-
-              child: const Text('Check Blood Compatibility'),
-
-            ),
-
-            const SizedBox(height: 16),
-
-            const Text(
-
-              'Blood Inventory',
-
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-
-            ),
-
-            Expanded(
-
-              child: ListView.builder(
-
-                itemCount: bloodBank.bloodInventory.length,
-
-                itemBuilder: (context, index) {
-
-                  final bloodType = bloodBank.bloodInventory.keys.elementAt(index);
-
-                  final units = bloodBank.bloodInventory[bloodType];
-
-                  return Card(
-
-                    color: bloodBank.isLowStock(bloodType)
-
-                        ? Colors.red.shade100
-
-                        : null,
-
-                    child: ListTile(
-
-                      title: Text('Blood Type: $bloodType'),
-
-                      subtitle: Column(
-
-                        crossAxisAlignment: CrossAxisAlignment.start,
-
-                        children: [
-
-                          Text('Available Units: $units'),
-
-                          if (bloodBank.isLowStock(bloodType))
-
-                            const Text(
-
-                              'Low Stock!',
-
-                              style: TextStyle(
-
-                                color: Colors.red,
-
-                                fontWeight: FontWeight.bold,
-
-                              ),
-
-                            ),
-
-                        ],
-
-                      ),
-
-                    ),
-
-                  );
-
-                },
-
-              ),
-
-            ),
-
+            Text('Name: ${userData.name}'),
+            Text('Blood Group: ${userData.bloodGroup}'),
+            Text('Age: ${userData.age}'),
+            Text('Weight: ${userData.weight}'),
+            Text('Address: ${userData.address}'),
+            Text('Phone: ${userData.phone}'),
+            Text('Last Donation: ${userData.lastDonation}'),
           ],
-
         ),
-
       ),
-
     );
+  }
+}
 
+class AcceptorPage extends StatefulWidget {
+  const AcceptorPage({super.key});
+
+  @override
+  State<AcceptorPage> createState() => _AcceptorPageState();
+}
+
+class _AcceptorPageState extends State<AcceptorPage> {
+  String? selectedBloodGroup;
+  DateTime? selectedDate;
+  String? selectedLocation;
+  List<UserData> availableDonors = [];
+
+  void _searchDonors() {
+    // Sample donor data (in real app, this would come from a database)
+    setState(() {
+      availableDonors = [
+        UserData(
+          name: "John Doe",
+          bloodGroup: selectedBloodGroup ?? "A+",
+          age: "25",
+          weight: "70",
+          address: selectedLocation ?? "Location 1",
+          phone: "1234567890",
+          lastDonation: "2024-01-01",
+        ),
+        // Add more sample donors as needed
+      ];
+    });
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Request Blood')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            DropdownButton<String>(
+              hint: const Text('Select Blood Group'),
+              value: selectedBloodGroup,
+              items: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedBloodGroup = newValue;
+                });
+              },
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final DateTime? picked = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime.now(),
+                  lastDate: DateTime.now().add(const Duration(days: 30)),
+                );
+                if (picked != null) {
+                  setState(() {
+                    selectedDate = picked;
+                  });
+                }
+              },
+              child: Text(selectedDate == null
+                  ? 'Select Date'
+                  : 'Date: ${selectedDate!.toString().split(' ')[0]}'),
+            ),
+            DropdownButton<String>(
+              hint: const Text('Select Location'),
+              value: selectedLocation,
+              items: ['Location 1', 'Location 2', 'Location 3']
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedLocation = newValue;
+                });
+              },
+            ),
+            ElevatedButton(
+              onPressed: _searchDonors,
+              child: const Text('Search Donors'),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: availableDonors.length,
+                itemBuilder: (context, index) {
+                  final donor = availableDonors[index];
+                  return ListTile(
+                    title: Text(donor.name),
+                    subtitle: Text('Blood Group: ${donor.bloodGroup}'),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
