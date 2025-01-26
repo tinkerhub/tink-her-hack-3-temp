@@ -1,39 +1,37 @@
-# [Project Name] 🎯
+# [data blocker 1.0] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [syntax_squad]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Mayookha J S] - [SREE NARAYANA GURUKULAM COLLEGE OF ENGINEERING]
+- Member 2: [Leah Sarah Biju] - [SREE NARAYAN GURUKULAM COLLEGE OF ENGINEERING]
+-
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[This project blocks unwanted personal data extraction from a browsed site at a time set by the user.This project aims to keep the privacy of the users veiled.]
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+[The unwanted instrusion of trackers into the personal data of the user]
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+[Well we create a browser extension where we provide a pop up window-timer that let the user limit the time upto which the tracker can collect data.After the timer runs out the extension blocks all the trackers.Thus your privacy is safe in your hands.]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
+- [java script]
+- [HTML]
 - [Libraries used]
-- [Tools used]
+- [only APIs used]
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- [nil]
 
 ### Implementation
 For Software:
@@ -48,7 +46,6 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
@@ -63,12 +60,7 @@ For Software:
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
+[nil]
 # Build Photos
 ![Team](Add photo of your team here)
 
