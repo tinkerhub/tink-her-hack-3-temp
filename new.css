@@ -1,0 +1,17 @@
+/* This will style the background of the page */
+body {
+    background-color: rgb(253, 251, 251);
+  }
+  
+  /* This will make the heading bold and centered */
+  h1 {
+    color: rgb(222, 27, 164);
+    text-align: center;
+  }
+  
+  /* This will change the text color of paragraphs */
+  p {
+    color: green;
+    font-size: 18px;
+  }
+  
