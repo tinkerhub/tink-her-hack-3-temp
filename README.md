@@ -34,65 +34,35 @@ For Software:
 For Software:
 # Installation
 django-admin startproject Contactbook #create django project
+
 python manage.py startapp contacts #create django app
+
 python -m venv venv #install environment
+
 venv/Script/activate #activate it
+
 python manage.py migrations #apply migrations
-python manage.py runserver #run the django development 
+
 # Run
-[commands]
+python manage.py runserver #run the django development 
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1](https://github.com/user-attachments/assets/4f988290-a5a1-4d88-92f0-c43f51641c97)
+landing page of contact book welcoming the user and showingthe option to redirect to contact list page
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2](https://github.com/user-attachments/assets/30b4a189-7062-4f54-87b3-305bab5098c8)
+this is the contact list page it shows the details of the saved contacts, you can delete and search for particular person and you can also redirect to add contacts page
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
+![Screenshot3](https://github.com/user-attachments/assets/5e8fd707-fd58-4e35-8ed9-27b243afcd0c)
+you can add the contact details of particular person and you can head back to the contact list page too
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
 
-![Final](Add photo of final product here)
-*Explain the final build*
 
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
 
 ---
 Made with ❤️ at TinkerHub
