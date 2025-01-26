@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>safesphere</title>
+</head>
+<body>
+    <link rel="stylesheet"
+    href="new.css">
+    <h1 style="color: rgb(100, 221, 169);">"Disaster Shield:Be prepared,Stay safe"</h1>
+    <p style="color: rgb(33, 112, 160);"> Welcome to our Disaster Management Hub, where preparedness meets action. Our mission is to provide reliable resources, expert guidance, and cutting-edge solutions for disaster prevention, response, and recovery. Whether you're an individual, business, or community leader, we offer the tools and knowledge you need to effectively manage emergencies and minimize their impact. Together, we can build a resilient future, one step at a time. Join us in making disaster preparedness a priority—because every moment counts when it comes to saving lives and protecting what matters most.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 style="color: darkorchid;">Dashboard</h2>
+    <ul>
+      <li><a href="about.html">about</a></li>
+      <li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="resource.html">Resource Center</a></li>
+      <li><a href="volunteerlist.html">Community Engagement</a></li>
+    </ul>
+
+  </div>
+
+  
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <!-- <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="resource.html">Resource Center</a></li>
+      <li><a href="interactive.html">Interactive Map</a></li>
+      <li><a href="#" onclick="showContent('community')">Community Engagement</a></li>
+    </ul>
+  </div> -->
+
+  <!-- Main Content Area -->
+  <div class="content">
+    <div id="home" class="page">
+      <h1>Welcome to the Home Page</h1>
+      <p>hey how can i help you</p>
+    </div>
+    <div id="guidelines" class="page" style="display: none;">
+      <h1>Guidelines</h1>
+      <p>Here you can add guidelines for users.</p>
+    </div>
+    <div id="resources" class="page" style="display: none;">
+      <h1>Resource Center</h1>
+      <p>Provide resources or documents for your audience here.</p>
+    </div>
+    <div id="interactive" class="page" style="display: none;">
+      <h1>Interactive Map</h1>
+      <p>Embed or display an interactive map in this section.</p>
+    </div>
+    <div id="community" class="page" style="display: none;">
+      <h1>Community Engagement</h1>
+      <p>Use this area for user interactions and community updates.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript to Toggle Pages -->
+  <script>
+    function showContent(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+      });
+      // Show the selected page
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
