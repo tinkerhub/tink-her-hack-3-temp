@@ -1,34 +1,32 @@
-# [Project Name] 🎯
+# charity-hope 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Tech Titans
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Gayathri Krishna - St.Joseph college (autonomous) irinjalakuda
+- Member 2: Suhana Parvin T.S - St.Joseph college (autonomous) irinjalakuda
+
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://charity-hope-uu3a.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+The charity website is a platform connecting donors with verified organizations to support meaningful causes. It offers secure donations, real-time updates, and volunteer opportunities, promoting transparency and impactful giving.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+The website solves the problem of mistrust and inefficiency in charitable giving by ensuring transparency, connecting donors directly with verified organizations, and providing clear impact updates on donations.
+
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+We’re zapping away donation doubts with a transparency toolkit! From verified charities to real-time updates, we’re turning giving into a smooth, trust-filled ride. Think of us as the matchmakers for your generosity and a cause that truly needs it—swipe right for impact! 🚀❤️
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- HTML,CSS,JAVASCRIT
 
 For Hardware:
 - [List main components]
@@ -47,7 +45,7 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+!PRO1.0()
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
