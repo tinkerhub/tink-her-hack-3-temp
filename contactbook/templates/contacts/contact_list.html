@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head><!DOCTYPE html>
+    <html>
+    <head>
+        <title>Contact List</title>
+        <style>
+            /* Set background and global styles */
+            body {
+                background-color: #88BDF2;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                text-align: center;
+            }
+    
+            /* Style the container */
+            .container {
+                background-color: #BDDDFC;
+                color: black;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                max-width: 600px;
+                width: 90%;
+            }
+    
+            /* Center and style the headline */
+            h1 {
+                margin-bottom: 20px;
+                font-size: 2rem;
+            }
+    
+            /* Style the search form */
+            form {
+                margin-bottom: 20px;
+            }
+    
+            input[type="text"] {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 70%;
+                margin-bottom: 10px;
+            }
+    
+            button {
+                padding: 10px 20px;
+                background-color: #182b3e;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            button:hover {
+                background-color: #10426a;
+            }
+    
+            /* Style the contact list */
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+    
+            li {
+                margin: 10px 0;
+                background-color: #f0f4fa;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+    
+            /* Style the Add New Contact button */
+            a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #182b3e;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+    
+            a:hover {
+                background-color: #10426a;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Contact List</h1>
+            <form method="get">
+                <input type="text" name="search" placeholder="Search by name" value="{{ request.GET.search }}">
+                <button type="submit">Search</button>
+            </form>
+            <ul>
+                {% for contact in contacts %}
+                    <li>
+                        {{ contact.name }} <br> {{ contact.number }} <br> {{ contact.email }}
+                        <form action="{% url 'delete_contact' contact.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                 </li>
+                    </li>
+                {% empty %}
+                    <li>No contacts found</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_contact' %}">Add New Contact</a>
+        </div>
+    </body>
+    </html>
+    
+    

@@ -1,0 +1,43 @@
+# Python
+*.pyc
+*.pyo
+__pycache__
+
+# Django
+*.log
+*.sqlite3
+db.sqlite3
+media/
+static/
+venv/
+env/
+*.env
+*.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python Packaging
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+
+# Local virtual environment
+env/
+venv/
+
+# Coverage reports
+.coverage
+*.cover
+nosetests.xml
+coverage.xml
+*.hypothesis/

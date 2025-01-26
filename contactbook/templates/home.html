@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Set background color to beige */
+        body {
+            background-color: #88BDF2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Center the container and set styles */
+        .container {
+            background-color: #BDDDFC;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        /* Center and style the headline */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Style the link */
+        a {
+            color: rgb(19, 19, 1);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #182b3e;
+            color: rgb(10, 10, 9);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #747576(169, 169, 4);
+            color: rgb(41, 41, 40);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Contact Book</h1>
+        <a href="{% url 'contact_list' %}">Go to Contacts</a>
+    </div>
+</body>
+</html>

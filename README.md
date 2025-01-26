@@ -1,45 +1,44 @@
-# [Project Name] 🎯
+CONTACT BOOK🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+FATHIMATH THASNI
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+INDIVIDUAL PROJECT
+
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
-
+yOU CAN ADD A LIST OF CONTACT NUMBERS AND EMAIL IDS OF MULTIPLE PERSON AND YOU HAVE THE OPTION TO ADD, DELETE AND SEARCH THE CONTACT DETAILS
 ### The Problem statement
-[What ridiculous problem are you solving?]
+DO YOU WANNA STORE THE IMPORTANT CONTACT DATAS OF PEOPLE WITHOUT LOSING IT?
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+GO TO THE WEBSITE STORE IMPORTATNT DATA AND BE FREE
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- PYTHON, HTML, CSS
+- DJANGO
+- DJANGO
+- VS CODE, GIT, GITHUB, RENDER
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
 # Installation
-[commands]
-
+django-admin startproject Contactbook #create django project
+python manage.py startapp contacts #create django app
+python -m venv venv #install environment
+venv/Script/activate #activate it
+python manage.py migrations #apply migrations
+python manage.py runserver #run the django development 
 # Run
 [commands]
 

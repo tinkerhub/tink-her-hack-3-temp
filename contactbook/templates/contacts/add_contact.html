@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Contact</title>
+    <style>
+        /* Set background color and central alignment */
+        body {
+            background-color: #88BDF2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the container */
+        .container {
+            background-color: #BDDDFC;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Center and style the headline */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Style the form labels and inputs */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+            color: black;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #182b3e;
+            color: #BDDDFC;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #BDDDFC;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #88BDF2;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Contact</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+            <label for="number">Number</label>
+            <input type="text" name="number" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+            <button type="submit">Add Contact</button>
+        </form>
+        <a href="{% url 'contact_list' %}">Back to Contact List</a>
+    </div>
+</body>
+</html>
