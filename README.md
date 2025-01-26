@@ -1,99 +1,66 @@
-# [Project Name] 🎯
+Farmer's Unit 🎯
+Basic Details
+Team Name: NA
+Team Members
+Member 1: Mufeeda.K - MES College of Engineering, Kuttipuram
+Member 2: NA
+Member 3: NA
+Hosted Project Link
+Farmer's Unit Demo
 
+Project Description
+The Farmer’s Unit project facilitates the sale of local farm products and provides detailed information about crops produced locally. It helps increase farmers' profits by eliminating middlemen. Customers can directly access product details such as price, quantity, and availability, and farmers can sell their crops in a timely manner before the shelf life expires.
 
-## Basic Details
-### Team Name: [Name]
+The Problem Statement
+Customers have direct access to local farmers, ensuring better quality products.
+Farmers can sell crops before they spoil, avoiding wastage and maximizing profits.
+The Solution
+The solution is a user-friendly website that connects local farmers directly with customers. It provides a platform where customers can get updated information about available products, prices, and quantities, and farmers can easily list and manage their products.
 
-
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
-
-### Hosted Project Link
-[mention your project hosted project link here]
-
-### Project Description
-[2-3 lines about what your project does]
-
-### The Problem statement
-[What ridiculous problem are you solving?]
-
-### The Solution
-[How are you solving it? Keep it fun!]
-
-## Technical Details
-### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
+Technical Details
+Technologies/Components Used
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
+JavaScript
+Vite + React
+React-markdown
+IDX (Identity Exchange)
+Vercel (for deployment)
 For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+NA
+Implementation
+For Software:
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+Installation:
+Clone the repository to your local system:
+```bash
+git clone https://github.com/tinkerhub/farmer-six.git
+```
+Install dependencies:
+```bash
+npm install
+```
+Run the application:
+```bash
+npm start
+```
+Project Documentation
+For Software:
 
-# Build Photos
-![Team](Add photo of your team here)
+Screenshots:
+Farmer's Login Page:
+
+Product Entering Page:
+
+Product Details Page:
+
+Product Description:
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
----
+Team Contributions
+Mufeeda.K: Frontend development (React), Product page creation, Design & UI development.
+Member 2: NA
+Member 3: NA
 Made with ❤️ at TinkerHub
+
