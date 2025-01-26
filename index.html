@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity Donation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#donation-form">Donate</a></li>
+      <li><a href="#impact">Our Impact</a></li>
+      <li><a href="#causes">Our Causes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Charity for Hope</h1>
+    
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1>Make a Difference Today</h1>
+      <p>Join us in helping communities around the world.</p>
+      <a href="#donation-form" class="cta-button">Donate Now</a>
+    </div>
+  </header>
+   <!-- About Section -->
+   <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p><i>At C, we believe in the power of kindness and community. Founded with the mission to create a meaningful impact in the lives of those in need, we strive to build a world where compassion knows no boundaries.
+
+        Our organization works tirelessly to provide support, resources, and opportunities to underserved communities. From delivering food and medical aid to empowering education and skill-building programs, every effort we make is dedicated to fostering hope and change.
+        
+        Our Vision:
+        To create a sustainable and inclusive future where every individual can live with dignity and opportunity.
+        
+        Our Mission:
+        To mobilize resources, inspire action, and bring communities together to transform lives through impactful programs and initiatives.</i></p>
+    </div>
+  </section>
+
+  <!-- Causes Section -->
+  <section id="causes" class="section causes">
+    <div class="container">
+      <h2>Our Causes</h2>
+      <div class="causes-list">
+        <div class="cause">
+          <img src="education.jpeg" alt="Education">
+          <h3>Education</h3>
+          <p>Provide quality education for underprivileged children.</p>
+        </div>
+        <div class="cause">
+          <img src="healthcare.jpeg" alt="Healthcare">
+          <h3>Healthcare</h3>
+          <p>Deliver essential healthcare to vulnerable communities.</p>
+        </div>
+        <div class="cause">
+          <img src="disaster relief.jpeg" alt="Disaster Relief">
+          <h3>Disaster Relief</h3>
+          <p>Help families recover from natural disasters.</p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+
+  <!-- Donation Section -->
+  <section id="donation-form" class="donation-section">
+    <h2>Make a Donation</h2>
+    <div class="donation-form">
+      <label for="donationAmount">Donation Amount ($):</label>
+      <input type="number" id="donationAmount" value="50" min="1">
+      
+      <div class="frequency-options">
+        <label>
+          <input type="radio" name="frequency" value="one-time" checked> One-time
+        </label>
+        <label>
+          <input type="radio" name="frequency" value="monthly"> Monthly
+        </label>
+      </div>
+
+      <div>
+        <h3>Total Donation: $<span id="totalDonation">50</span></h3>
+      </div>
+
+      <button id="donateButton">Donate Now</button>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact" class="impact-section">
+    <h2>Our Impact</h2>
+    <p>We’ve changed the lives of over 100,000 people globally.</p>
+    <div class="impact-stats">
+      <div class="stat">
+        <h3>50,000+</h3>
+        <p>People helped</p>
+      </div>
+      <div class="stat">
+        <h3>500+</h3>
+        <p>Projects funded</p>
+      </div>
+      <div class="stat">
+        <h3>10+</h3>
+        <p>Countries supported</p>
+      </div>
+    </div>
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Fill out the form below or reach us on social media.</p>
+      <form class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+  
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+  
+          <button type="submit">Submit</button>
+      </form>
+  
+      <div class="social-links">
+          <a href="#facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          
+      </div>
+  </section>
+  
+  </section>
+
+ 
+  
+  <div>
+    <a href=""><img src="logo.jpeg" alt="Charity Logo" class="footer-logo"></a>
+      <h3>More Information About Us</h3>re information about us</h3>
+      <p>4486 Richards Avenue, Modesto CA - 95354</p>
+      <p>Tel: 200-000-0000</p>
+      <p>Email: charityjet@gmail.com</p>
+  </div>
+  <div class="social">
+      <h3>Support</h3>
+      <p>Help us shape a better future for children.</p>
+      <div class="side_btn">
+          <a href="donate.html">JOIN US TODAY</a>
+      </div>
+  </div>
+  <!-- Footer -->
+
+  <footer class="social-media-section">
+    <div class="container">
+      <h3>Connect with us</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/?text=Hello" target="_blank" aria-label="WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+      </div>
+      
+    </div>
+  </footer>
+  <div class="footer-logo-container">
+    
+</div>
+<footer>
+  <p>&copy; 2021 Charity Jet. All rights reserved.</p></footer>
+</footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
