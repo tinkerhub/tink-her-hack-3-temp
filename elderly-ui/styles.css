@@ -1,0 +1,58 @@
+/* Apply Inconsolata font to the whole body */
+body {
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/eldercare.jpg'); 
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    left: 100px;
+}
+
+.title-entry{
+    text-align: left;
+    top: 500px;
+    left: 250px;
+}
+.container {
+    text-align: left;
+    position:absolute;
+    top: 20px;
+    left: 250px;
+}
+
+/* Heading styles */
+.heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Message paragraph styles */
+.message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Explore button styles */
+.explore-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Explore button hover effect */
+.explore-button:hover {
+    background-color: #45a049;
+}
