@@ -1,4 +1,4 @@
-/* General Styles */
+/* Basic styling for the profile page */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,10 +6,10 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Dashboard Layout */
-.dashboard {
+/* Profile container with flexbox */
+.profile-container {
     display: flex;
-    height: 100vh;
+    height: 100vh; /* Full screen height */
 }
 
 /* Sidebar */
@@ -48,6 +48,8 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    background-color: #fff;
+    margin-left: 20px; /* Space between sidebar and profile */
 }
 
 /* Header */
@@ -58,37 +60,42 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Layout */
-.cards {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Creates 2 columns */
-    gap: 20px;  /* Space between cards */
-    margin-top: 20px;
-}
-
-.card {
+/* Profile Section */
+.profile-info {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 20px;
 }
 
-.card button {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+/* Profile Header (Image and Name) */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.card button:hover {
-    background: #45a049;
+.user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Profile Details */
+.profile-details p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.profile-details strong {
+    font-weight: bold;
 }

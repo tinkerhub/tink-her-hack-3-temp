@@ -1,4 +1,4 @@
-/* General Styles */
+/* Sample CSS for the Medicine Supply Page */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -65,21 +65,16 @@ header {
     margin-top: 20px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Creates 2 columns */
-    gap: 20px;  /* Space between cards */
-    margin-top: 20px;
-}
-
 .card {
     background: white;
     padding: 20px;
+    flex: 1;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+/* Button Styling */
 .card button {
     background: #4CAF50;
     color: white;
@@ -91,4 +86,71 @@ header {
 
 .card button:hover {
     background: #45a049;
+}
+
+
+.medicine-supply {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.medicine-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.medicine-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.medicine-name {
+    font-size: 18px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
 }

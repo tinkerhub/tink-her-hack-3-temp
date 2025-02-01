@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Supply - Elder Care</title>
+    <link rel="stylesheet" href="medsupply.css">
+    <script defer src="medsupply.js"></script>
+</head>
+<body>
+    <div class="medicine-supply">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Elder Nest</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Medicine Supply</a></li>
+                <li><a href="#">Emergency Contacts</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Medicine Supply</h1>
+            </header>
+
+            <section class="medicine-list">
+                <h3>Available Medicines</h3>
+
+                <ul>
+                    <li>
+                        <span class="medicine-name">Aspirin</span>
+                        <button onclick="orderMedicine('Aspirin')">Order</button>
+                    </li>
+                    <li>
+                        <span class="medicine-name">Paracetamol</span>
+                        <button onclick="orderMedicine('Paracetamol')">Order</button>
+                    </li>
+                    <li>
+                        <span class="medicine-name">Insulin</span>
+                        <button onclick="orderMedicine('Insulin')">Order</button>
+                    </li>
+                    <!-- Add more medicines here -->
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
