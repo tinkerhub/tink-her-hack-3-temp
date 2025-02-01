@@ -13,12 +13,14 @@ body {
 }
 
 /* Sidebar */
+/* Sidebar */
 .sidebar {
     width: 250px;
-    background: #4CAF50;
+    background: #007bff;  /* Blue color */
     color: white;
     padding: 20px;
 }
+
 
 .sidebar h2 {
     text-align: center;
@@ -41,7 +43,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background: #45a049;
+    background: #1b2bbd;
 }
 
 /* Main Content */
@@ -91,4 +93,11 @@ header {
 
 .card button:hover {
     background: #45a049;
+}
+/* Image styling */
+.service-image {
+    width: 100%; /* Image fills the width of the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensures image fits inside the container without stretching */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
 }
