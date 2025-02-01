@@ -1,68 +1,108 @@
 import React, { useState } from "react";
+import "../styles/register.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
+    contact: "",
     email: "",
-    phone: "",
+    address: "",
+    medicalHistory: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Donor Registered:", formData);
-    // Backend integration can be added here
+
+    const donorData = {
+      name: formData.name,
+      age: formData.age,
+      contact: formData.contact,
+      email: formData.email,
+      address: formData.address,
+      medicalHistory: formData.medicalHistory,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/donor/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(donorData),
+      });
+
+      if (response.ok) {
+        alert('Donor registered successfully!');
+      } else {
+        const data = await response.json();
+        alert(data.detail);
+      }
+    } catch (error) {
+      console.error('Error during donor registration:', error);
+      alert('An error occurred.');
+    }
   };
 
   return (
-    <div className="register-donor">
-      <h2>Register as a Donor</h2>
+    <div className="register-container">
+      <h2>Register as Donor</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Age:
-          <input
-            type="number"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Phone:
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit">Register</button>
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="Age"
+          value={formData.age}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="contact"
+          placeholder="Contact Number"
+          value={formData.contact}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          value={formData.address}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="medicalHistory"
+          placeholder="Medical History (Optional)"
+          value={formData.medicalHistory}
+          onChange={handleChange}
+        />
+        <button type="submit">Register as Donor</button>
       </form>
     </div>
   );
