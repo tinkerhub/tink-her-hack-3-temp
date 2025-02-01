@@ -1,54 +1,50 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: white;
-    color: black;
-    list-style: none;
-    padding: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .page {
-    padding: 20px;
-  }
-  
-  input, button {
-    display: block;
-    margin: 10px 0;
-    padding: 8px;
-  }
-  
+/* style.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e0e7ff, #f3e8ff); /* Light blue to light purple gradient */
+  font-family: Arial, sans-serif;
+}
+
+.home-content {
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1e293b; /* Dark gray */
+  margin-bottom: 1.5rem;
+}
+
+.home-description {
+  font-size: 1.25rem;
+  color: #4b5563; /* Medium gray */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.home-button {
+  background: #2563eb; /* Blue */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+  background: #1d4ed8; /* Darker blue on hover */
+  transform: scale(1.05);
+}
