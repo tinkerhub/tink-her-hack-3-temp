@@ -2,19 +2,18 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Codebuds
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Kelna Sebastian - Albertian Institute of Science and Technology 
+- Member 2: Milin Thomas - Albertian Institute of Science and Technology 
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+Beautiful **Task Manager** is a sleek, user-friendly Flutter application designed to help you organize your daily tasks with style and efficiency. This app combines functionality with an appealing visual design to make task management a pleasant experience.
 
 ### The Problem statement
 [What ridiculous problem are you solving?]
@@ -25,10 +24,7 @@
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Flutter
 
 For Hardware:
 - [List main components]
