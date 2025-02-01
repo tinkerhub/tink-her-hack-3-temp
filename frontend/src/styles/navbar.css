@@ -1,79 +1,70 @@
 /* Navbar.css */
 .navbar {
-    background-color:  #3182ce; /* Light blue navbar */
+    background-color: blue;
+    padding: 10px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center; /* Centers items vertically */
   }
   
-  .navbar .logo img {
-    height: 50px;
+  .navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; /* Pushes the logo to the left */
   }
   
   .navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
+    list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
   }
   
-  .navbar ul li {
-    position: relative;
-    margin: 0 15px;
+  .navbar li {
+    display: inline;
   }
   
-  .navbar ul li a,
-  .navbar ul li span {
+  .navbar a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px;
-    display: block;
+    font-size: 16px;
   }
   
-  .navbar ul li a:hover,
-  .navbar ul li span:hover {
+  .navbar a:hover {
     text-decoration: underline;
   }
   
-  .dropdown {
+  .navbar .dropdown {
     position: relative;
-    cursor: pointer;
   }
   
-  /* Hide dropdown menu by default */
-  .dropdown-menu {
+  .navbar .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: lightblue; /* Match navbar color */
-    top: 100%;
-    left: 0;
-    list-style: none;
+    background-color: blue;
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    width: 150px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+    min-width: 160px;
   }
   
-  /* Show dropdown when hovering over "Register" */
-  .dropdown:hover .dropdown-menu {
+  .navbar .dropdown:hover .dropdown-menu {
     display: block;
   }
   
-  .dropdown-menu li {
-    width: 100%;
+  .navbar .dropdown-menu li {
+    padding: 8px 12px;
   }
   
-  .dropdown-menu li a {
-    padding: 10px;
-    display: block;
+  .navbar .dropdown-menu li a {
     color: white;
-    text-decoration: none;
   }
   
-   .dropdown-menu li a:hover {
-    background-color:  #3182ce;
+  .navbar .dropdown-menu li a:hover {
+    background-color: #0056b3;
   }
-
-
+  
