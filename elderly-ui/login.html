@@ -3,22 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Elder Care</title>
-    <link rel="stylesheet" href="login.css">
-    <script defer src="script.js"></script>
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Full-screen background */
+        body {
+            background: url('images/login-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Semi-transparent overlay */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Login box */
+        .login-container {
+            position: relative;
+            z-index: 2;
+            width: 420px; /* Adjusted size */
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        /* Title */
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Input fields */
+        .input-box {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 18px;
+            outline: none;
+        }
+
+        /* Login button */
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Arrow inside button */
+        .login-btn span {
+            margin-left: 8px;
+            font-size: 22px;
+        }
+
+        .login-btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login to Elder Nest</h2>
-        <form>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
 
-            <button type="submit">Login</button>
-        </form>
+    <div class="overlay"></div> <!-- Overlay for better readability -->
+
+    <div class="login-container">
+        <h2>Welcome</h2>
+        <input type="text" class="input-box" placeholder="Username">
+        <input type="password" class="input-box" placeholder="Password">
+        <button class="login-btn">Login <span>➡️</span></button>
     </div>
+
 </body>
 </html>
