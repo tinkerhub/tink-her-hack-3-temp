@@ -21,7 +21,7 @@ const organisationsData = [
   {
     id: 3,
     name: "Org 3",
-    description: "Providing food for the needy",
+    description: "Providing organs for patients",
     image: "/images/ngo.jpg",
     emergency: false,
     patientsHelped: 200,
@@ -39,6 +39,7 @@ const organisationsData = [
 const Organisations = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
+  const [selectedOrg, setSelectedOrg] = useState("");
 
   // Filter organisations based on search input
   const filteredOrganisations = organisationsData.filter((org) =>
@@ -73,6 +74,19 @@ const Organisations = () => {
           <option value="">Sort By</option>
           <option value="emergency">Emergency Cases</option>
           <option value="patients">Patients Helped</option>
+        </select>
+
+        <select
+          className="org-dropdown"
+          value={selectedOrg}
+          onChange={(e) => setSelectedOrg(e.target.value)}
+        >
+          <option value="">Select Organisation</option>
+          {sortedOrganisations.map((org) => (
+            <option key={org.id} value={org.name}>
+              {org.name}
+            </option>
+          ))}
         </select>
       </div>
 

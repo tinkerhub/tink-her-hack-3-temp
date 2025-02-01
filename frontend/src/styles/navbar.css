@@ -1,0 +1,79 @@
+/* Navbar.css */
+.navbar {
+    background-color:  #3182ce; /* Light blue navbar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo img {
+    height: 50px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    position: relative;
+    margin: 0 15px;
+  }
+  
+  .navbar ul li a,
+  .navbar ul li span {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+  }
+  
+  .navbar ul li a:hover,
+  .navbar ul li span:hover {
+    text-decoration: underline;
+  }
+  
+  .dropdown {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Hide dropdown menu by default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: lightblue; /* Match navbar color */
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Show dropdown when hovering over "Register" */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    width: 100%;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  
+   .dropdown-menu li a:hover {
+    background-color:  #3182ce;
+  }
+
+
