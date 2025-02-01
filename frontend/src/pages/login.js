@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/login.css"; 
+import axios from "axios"; // Import axios
+import "../styles/login.css"; // Make sure this CSS file exists
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Placeholder authentication logicg
-    if (email === "test@example.com" && password === "password") {
-      navigate("/");
-    } else {
-      alert("Invalid credentials");
+
+    // Prepare data to be sent in the request
+    const loginData = {
+      email: "email",
+      password: "password",
+    };
+
+    try {
+      // Send a POST request to the backend login endpoint
+      const response = await axios.post("http://127.0.0.1:8000/auth/login", loginData);
+
+      if (response.status === 200) {
+        // Store the JWT token in localStorage (or sessionStorage)
+        localStorage.setItem("token", response.data.access_token);
+
+        // If login is successful, redirect to the home page
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Login error", error);
+      alert("Invalid credentials, please try again.");
     }
   };
 
@@ -22,7 +39,7 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input
-          type="email"
+          type="email@"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
