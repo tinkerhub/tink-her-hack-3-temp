@@ -1,10 +1,15 @@
 /* Navbar.css */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: blue;
     padding: 10px;
     display: flex;
-    justify-content: flex-end; /* Aligns items to the right */
+    justify-content: center; /* Centers items horizontally */
     align-items: center; /* Centers items vertically */
+    z-index: 1000; /* Ensures navbar stays on top */
   }
   
   .navbar .logo {
@@ -30,6 +35,7 @@
     color: white;
     text-decoration: none;
     font-size: 16px;
+    margin: 0 10px;
   }
   
   .navbar a:hover {
@@ -65,6 +71,21 @@
   }
   
   .navbar .dropdown-menu li a:hover {
-    background-color: #0056b3;
+    background-color: #0056b3;
   }
+  
+  body {
+    margin-top: 60px; /* Adjust this value based on your navbar height */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stacks items vertically on small screens */
+      align-items: flex-start; /* Aligns items to the start */
+    }
+  
+    .navbar a {
+      margin: 5px 0; /* Adjusts spacing between links */
+  }
+}
   

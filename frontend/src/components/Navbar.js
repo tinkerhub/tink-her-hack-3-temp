@@ -14,7 +14,7 @@ const Navbar = () => {
           <span>Register ▼</span>
           <ul className="dropdown-menu">
             <li><Link to="/registerdonor">As Donor</Link></li>
-            <li><Link to="/register-organisation">As Organisation</Link></li>
+            <li><Link to="/registerorganisation">As Organisation</Link></li>
           </ul>
         </li>
       </ul>
