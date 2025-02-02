@@ -1,11 +1,12 @@
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f7fa;
-    padding: 2rem;
-  }
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  padding: 2rem;
+  justify-content: flex-start; /* Align content at the top */
+}
   
   .register-form {
     background: white;
