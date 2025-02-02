@@ -1,0 +1,91 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: blue;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    z-index: 1000; /* Ensures navbar stays on top */
+  }
+  
+  .navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; /* Pushes the logo to the left */
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar li {
+    display: inline;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar .dropdown {
+    position: relative;
+  }
+  
+  .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: blue;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+  }
+  
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 8px 12px;
+  }
+  
+  .navbar .dropdown-menu li a {
+    color: white;
+  }
+  
+  .navbar .dropdown-menu li a:hover {
+    background-color: #0056b3;
+  }
+  
+  body {
+    margin-top: 60px; /* Adjust this value based on your navbar height */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stacks items vertically on small screens */
+      align-items: flex-start; /* Aligns items to the start */
+    }
+  
+    .navbar a {
+      margin: 5px 0; /* Adjusts spacing between links */
+  }
+}
+  

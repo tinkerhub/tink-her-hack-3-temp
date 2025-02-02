@@ -2,33 +2,51 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Spark]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Sreepriya K M] - [Model Engineering College]
+- Member 2: [Esha Susan Shaji] - [Model Engineering College]
+- Member 3: [Rose Francis] - [Model Engineering College]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Cancer Support Network - Connecting Donors to Cancer Assistance Organizations
+
+Our website serves as a platform that connects generous donors with organizations dedicated to helping cancer patients. The platform offers valuable information about cancer, its impacts, and available support options.
+
+Key Features:
+
+Login Page: Users can securely log in to their accounts to access personalized content.
+
+User Registration: Users can register as either a Donor or an Organization. Donors can make a significant impact by contributing to organizations in need, while organizations can showcase their work and gain support.
+
+Organization List: Donors can explore a comprehensive list of registered organizations. The list is sortable by:
+
+Emergency Need: Helping donors prioritize organizations in urgent need of assistance.
+Number of Patients Helped: Allows donors to understand the scale of support each organization is providing.
+Important Cancer Information: The website provides users with essential cancer-related information to raise awareness and educate visitors on various aspects of cancer care and support.
+
+This platform ensures that donors can make informed decisions about where to direct their support, while organizations gain visibility and assistance from the community.]
+
+
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+[Cancer organizations often struggle to secure sufficient funding and support, while donors face difficulty finding trustworthy causes to contribute to. There is a need for a platform that connects donors with organizations helping cancer patients, allowing donors to easily find and support organizations based on urgency and impact. This platform will help donors make informed decisions while ensuring that organizations receive the resources needed to continue their work.]
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+[We’ve created a web platform that connects donors with cancer support organizations. Donors can explore a list of registered organizations, sort them by urgency and impact, and make informed contributions to those in need, helping organizations get the support they require to assist cancer patients.]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [html, css, javascript, python]
+- [FastApi]
+- [React]
+- [Nodejs]
 
 For Hardware:
 - [List main components]
@@ -38,23 +56,40 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+[winget install OpenJS.NodeJS]
+[pip install fastapi uvicorn]
+[npm install react react-dom]
+[npm install react-router-dom]
+
 
 # Run
-[commands]
+[uvicorn app.main:app --reload]
+[npm start]
+
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1](assets/home.png)
+*This shows our home page*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2](assets/organisationsList.png)
+*This shows the list of organisations like NGOs*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3](assets/DonorRegistration.png)
+*People who are interested in donating money can register here*
+
+![Screenshot4](assets/SortedList1.png)
+*Organisations can be sorted in terms of emergency*
+
+![Screenshot5](assets/SortedList2.png)
+*Organisations can be sorted in terms of patients helped *
+
+![Screenshot5](assets/LOGINPAGE.jpg)
+*Organisations can be sorted in terms of patients helped *
+
+
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
