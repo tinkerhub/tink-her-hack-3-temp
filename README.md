@@ -2,13 +2,13 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: NOX
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Anagha TR - SCMS School of engineering and technology
+- Member 2: Anaya Wilson - SCMS School of engineering and technology
+- Member 3: Aneeja J - SCMS School of engineering and technology
 
 ### Hosted Project Link
 [mention your project hosted project link here]
