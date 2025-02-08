@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const fileInput = document.getElementById("fileInput");
     const oldWordInput = document.getElementById("oldWord");
     const newWordInput = document.getElementById("newWord");
@@ -18,8 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
             fileReader.readAsArrayBuffer(file);
             fileReader.onload = async function () {
                 const pdfBytes = new Uint8Array(fileReader.result);
-                const modifiedPdfBytes = await replaceTextWithoutBreaking(pdfBytes, oldWord, newWord);
-                downloadPdf(modifiedPdfBytes, file.name);
+                const modifiedPdfBytes = await processPdf(pdfBytes, oldWord, newWord);
+
+                if (modifiedPdfBytes) {
+                    const blob = new Blob([modifiedPdfBytes], { type: "application/pdf" });
+                    downloadPdf(blob, file.name);
+                } else {
+                    alert("Failed to replace text.");
+                }
             };
         } catch (error) {
             console.error(error);
@@ -27,62 +33,58 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    async function replaceTextWithoutBreaking(pdfBytes, oldWord, newWord) {
+    async function processPdf(pdfBytes, oldWord, newWord) {
+        const pdf = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
         const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+        const font = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
         const pages = pdfDoc.getPages();
 
-        for (const page of pages) {
-            const { width, height } = page.getSize();
+        for (let i = 0; i < pdf.numPages; i++) {
+            const page = await pdf.getPage(i + 1);
             const textContent = await page.getTextContent();
 
-            for (const item of textContent.items) {
-                if (item.str.includes(oldWord)) {
-                    const font = await extractFont(pdfDoc, item.fontName);  // Extracts original font
-                    const bgColor = await detectBackgroundColor(page, item);  // Matches background color
+            let modifiedLines = [];
+            let originalText = textContent.items.map(item => item.str).join(" ");
 
-                    const modifiedText = item.str.replace(new RegExp(oldWord, "g"), newWord);
-                    const adjustedWidth = item.width * (newWord.length / oldWord.length);
+            if (!originalText.includes(oldWord)) continue; // Skip page if no match
 
-                    // Draw a background-colored box to erase old text
-                    page.drawRectangle({
-                        x: item.transform[4],
-                        y: height - item.transform[5],
-                        width: adjustedWidth,
-                        height: item.height,
-                        color: bgColor,  // Uses detected background color
-                    });
+            // Replace words line by line
+            for (let item of textContent.items) {
+                let newText = item.str.replace(new RegExp(escapeRegExp(oldWord), "g"), newWord);
+                modifiedLines.push({ text: newText, x: item.transform[4], y: item.transform[5] });
+            }
 
-                    // Draw new text using extracted font
-                    page.drawText(modifiedText, {
-                        x: item.transform[4],
-                        y: height - item.transform[5],
-                        font,
-                        size: item.height,  // Keeps original font size
-                        color: PDFLib.rgb(0, 0, 0),  // Default black text
-                    });
-                }
+            // Clear the original text by drawing a white rectangle
+            const { width, height } = pages[i].getSize();
+            pages[i].drawRectangle({
+                x: 0,
+                y: 0,
+                width,
+                height,
+                color: PDFLib.rgb(1, 1, 1),
+                opacity: 1,
+            });
+
+            // Redraw modified text line by line
+            for (let line of modifiedLines) {
+                pages[i].drawText(line.text, {
+                    x: line.x,
+                    y: height - line.y, // Flip Y-axis for PDF-Lib
+                    font,
+                    size: 12,
+                    color: PDFLib.rgb(0, 0, 0),
+                });
             }
         }
 
-        return pdfDoc.save();
+        return await pdfDoc.save();
     }
 
-    async function extractFont(pdfDoc, fontName) {
-        try {
-            return await pdfDoc.embedFont(fontName);
-        } catch {
-            return await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);  // Default fallback
-        }
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
-    async function detectBackgroundColor(page, item) {
-        // This function should analyze the area around the text to find the background color
-        // For now, assume white, but future enhancement can detect exact color.
-        return PDFLib.rgb(1, 1, 1);  // Default to white
-    }
-
-    function downloadPdf(pdfBytes, fileName) {
-        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    function downloadPdf(blob, fileName) {
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
         link.download = fileName.replace(".pdf", "_modified.pdf");

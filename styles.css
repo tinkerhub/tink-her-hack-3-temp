@@ -1,39 +1,45 @@
 /* Full-page layout */
 body {
-    font-family: Times New Roman,serif;
+    font-family: "Times New Roman", serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0 ;
+    margin: 0;
     text-align: center;
+    background-color: #f4f4f4; /* Light background for better visibility */
 }
 
 /* Header Styling */
 header {
-    background: #7fceed
-    (114, 235, 251, 0.8);
+    background: rgba(114, 235, 251, 0.8); /* Fixed background color */
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
-}
-p {
-    font-size: 20px; 
-    color: #333; 
-    font-weight: normal; 
-    margin-bottom: 15px; 
+    width: 100%;
+    max-width: 600px;
 }
 
+/* Paragraph Styling */
+p {
+    font-size: 20px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+/* Heading Styling */
 h2 {
     font-size: 50px;
     font-weight: bold;
     color: #007BFF;
+    margin: 0;
 }
 
-/* Centered box */
+/* Centered Box */
 .container {
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -57,7 +63,8 @@ button {
     color: white;
     cursor: pointer;
     border: none;
-    transition: 0.3s;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
 }
 
 button:hover {
@@ -66,7 +73,7 @@ button:hover {
 
 /* Label Styling */
 label {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     display: block;
     margin-top: 10px;
