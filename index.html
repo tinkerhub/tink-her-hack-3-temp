@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Itinerary Planner</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Travel Itinerary Planner</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Select Your Destination</h2>
+        <select id="destination">
+            <option value="" disabled selected>Select a destination</option>
+            <option value="Paris">Paris</option>
+            <option value="New York">New York</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="London">London</option>
+            <option value="Rome">Rome</option>
+            <option value="Sydney">Sydney</option>
+            <option value="Dubai">Dubai</option>
+        </select>
+
+        <h2>Enter Your Budget</h2>
+        <input type="number" id="budget" placeholder="Enter Budget">
+
+        <h2>Select Your Trip Dates</h2>
+        <input type="date" id="start-date">
+        <input type="date" id="end-date">
+
+        <button onclick="generateItinerary()">Generate Itinerary</button>
+    </div>
+
+    <div id="itinerary-view">
+        <h2>Your AI-Generated Itinerary</h2>
+        <div id="itinerary-summary"></div>
+    </div>
+
+    <button onclick="exportItinerary()">Export as PDF</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

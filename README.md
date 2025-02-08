@@ -1,4 +1,4 @@
-# [Project Name] 🎯
+# DestINo 🎯
 
 
 ## Basic Details
