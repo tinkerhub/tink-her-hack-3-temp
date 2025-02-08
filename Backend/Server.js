@@ -1,28 +1,27 @@
-const mongoose= require('mongoose');
-const express= require('express');
-const bodyParser= require('body-parser');
-const mongoose= require('mongoose');
+const connectDB = require('./config/db');
 
-const authRoutes= require('./routes/auth');
+const express= require('express');
+const cors = require('cors');
+
+
+const authRoutes = require('./routes/auth');
 const scanRoutes= require('./routes/scan');
 
-const app=express();
 app.use(corse());
-app.use(bodyParser.json());
+app.use(express.json());
+
+connectDB();
 
 app.use('/api/auth', authRoutes);
 app.use('/api/scan', scanRoutes);
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost:27017/digital-mess-card', {  //Mongodb connection
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
 
 app.get('/',(req,res)=>{
     res.send('Digital MESS Card');      //Route
 });
 
-const PORT= 5000;
+const PORT= process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-})
+});
