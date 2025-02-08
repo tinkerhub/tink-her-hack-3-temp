@@ -19,19 +19,25 @@
             <option value="Paris">Paris</option>
             <option value="New York">New York</option>
             <option value="Tokyo">Tokyo</option>
+            <option value="London">London</option>
+            <option value="Rome">Rome</option>
+            <option value="Sydney">Sydney</option>
+            <option value="Dubai">Dubai</option>
         </select>
 
         <h2>Enter Your Budget</h2>
         <input type="number" id="budget" placeholder="Enter Budget">
+
+        <h2>Select Your Trip Dates</h2>
+        <input type="date" id="start-date">
+        <input type="date" id="end-date">
 
         <button onclick="generateItinerary()">Generate Itinerary</button>
     </div>
 
     <div id="itinerary-view">
         <h2>Your AI-Generated Itinerary</h2>
-        <div id="itinerary-summary">
-            <!-- AI-generated itinerary details will be dynamically inserted here -->
-        </div>
+        <div id="itinerary-summary"></div>
     </div>
 
     <button onclick="exportItinerary()">Export as PDF</button>
