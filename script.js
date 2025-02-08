@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             for (let line of modifiedLines) {
                 pages[i].drawText(line.text, {
                     x: line.x,
-                    y: height - line.y, // Flip Y-axis for PDF-Lib
+                    y: height - line.y, 
                     font,
                     size: 12,
                     color: PDFLib.rgb(0, 0, 0),
