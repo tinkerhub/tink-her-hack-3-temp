@@ -11,16 +11,13 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-calendar": "^5.1.0",
-    "react-dom": "^19.0.0",
-    "react-qr-reader": "^3.0.0-beta-1",
-    "use-sound": "^4.0.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.19.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
