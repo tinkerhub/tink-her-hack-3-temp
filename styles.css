@@ -1,102 +1,49 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #3498db;
     color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-h1 {
-    margin: 0;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    color: #444;
-}
-
-h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-h4 {
-    font-size: 1rem;
-    color: #555;
+    padding: 15px;
 }
 
 .form-container {
-    background-color: white;
+    background: white;
     padding: 20px;
-    margin: 20px;
+    width: 50%;
+    margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
-input[type="number"] {
-    width: 100%;
+input, select, button {
+    margin: 10px;
     padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    width: 80%;
+    font-size: 16px;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2980b9;
 }
 
-#itinerary-view {
-    margin: 20px;
-    background-color: white;
+#itinerary-summary {
+    background: white;
     padding: 20px;
+    margin: 20px auto;
+    width: 50%;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 5px 0;
-    font-size: 1rem;
-}
-
-ul li:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
