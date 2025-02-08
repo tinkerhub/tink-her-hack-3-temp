@@ -1,6 +1,7 @@
 const mongoose= require('mongoose');
 const scanSchema =new mongoose.Schema({                                     //Scan date update in db
-    userId: {   type: String, enum: ['lunch', 'snck'], required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    type: {   type: String, enum: ['lunch', 'snack'], required: true },
     date :{  type: Date, default: Date.now},
 });
 

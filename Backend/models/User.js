@@ -1,6 +1,6 @@
 const mongoose= require('mongoose');
 
-const userSchema= new mongoose.schema({                            //login details connected to db
+const userSchema= new mongoose.Schema({                            //login details connected to db
     username:{ type: String, required: true, unique: true },
     password:{ type: String, required: true, match:/^[a-zA-Z0-9]+$/,
     }
