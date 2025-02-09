@@ -50,13 +50,13 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot1](first page ))
-![alt text](<WhatsApp Image 2025-02-09 at 10.05.54 AM (1).jpeg>)
+![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 ![Screenshot2](web page after eter the inputs)
-![alt text](<WhatsApp Image 2025-02-09 at 10.05.42 AM.jpeg>)
+![alt text](<https://drive.google.com/file/d/17A-AXCXBq_KZSgjCHCBVhkMOqAzzHVnn/view?usp=drive_link>)
 
 ![Screenshot3](web page after the process)
-![alt text](<WhatsApp Image 2025-02-09 at 10.05.42 AM (5).jpeg>)
+![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 
 # Build Photos
@@ -67,7 +67,7 @@ For Software:
 *Explain the build steps*
 
 ![Final]
-![alt text](<WhatsApp Image 2025-02-09 at 10.05.42 AM copy.jpeg>)
+![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 Find and Replace is a frontend-only web application that allows users to upload a PDF, replace specific words, and download the modified version while preserving the original formatting. It eliminates the need for manual PDF editing, which is often time-consuming and tedious.
 
@@ -77,7 +77,7 @@ Hosted on Vercel, GitHub Pages, Find and Replace is easily accessible and automa
 
 ### Project Demo
 # Video
-<video controls src="WhatsApp Video 2025-02-09 at 10.23.59 AM (1).mp4" title="Title"></video>
+<video controls src="https://drive.google.com/file/d/1xBUEj8Q0JxgcZLoVQJXRE1qUjSLWCQ17/view?usp=drive_link" title="Title"></video>
 The video showcases how the Find and Replace web application functions:
 
 1️⃣ The user uploads a PDF file.
