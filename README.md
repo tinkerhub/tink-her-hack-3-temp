@@ -50,13 +50,13 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot1](first page ))
-![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
+![link](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 ![Screenshot2](web page after eter the inputs)
-![alt text](<https://drive.google.com/file/d/17A-AXCXBq_KZSgjCHCBVhkMOqAzzHVnn/view?usp=drive_link>)
+![link](<https://drive.google.com/file/d/17A-AXCXBq_KZSgjCHCBVhkMOqAzzHVnn/view?usp=drive_link>)
 
 ![Screenshot3](web page after the process)
-![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
+![link](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 
 # Build Photos
