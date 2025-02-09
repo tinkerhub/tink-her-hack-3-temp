@@ -50,8 +50,7 @@ For Software:
 ![Screenshot1](Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Image](https://github.com/user-attachments/assets/d67fc407-1484-4f9c-bf04-e3f981cb0683)
 
 ![Screenshot3](Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
