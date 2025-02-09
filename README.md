@@ -67,7 +67,7 @@ For Software:
 *Explain the build steps*
 
 ![Final]
-![alt text](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
+![link](<https://drive.google.com/file/d/1geHwpoVFbEe5Cwq-21wRqWUKOv9IYYth/view?usp=sharing>)
 
 Find and Replace is a frontend-only web application that allows users to upload a PDF, replace specific words, and download the modified version while preserving the original formatting. It eliminates the need for manual PDF editing, which is often time-consuming and tedious.
 
