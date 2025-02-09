@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 opacity: 1,
             });
 
-            // Redraw modified text line by line
+            
             for (let line of modifiedLines) {
                 pages[i].drawText(line.text, {
                     x: line.x,
