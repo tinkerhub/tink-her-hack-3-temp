@@ -9,6 +9,11 @@ body {
     margin: 0;
     text-align: center;
     background-color: #f4f4f4; /* Light background for better visibility */
+    background-image: url("Light-Blue-Abstract-Webpage-Background-Graphics-1.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Header Styling */
@@ -33,24 +38,39 @@ p {
 h2 {
     font-size: 50px;
     font-weight: bold;
-    color: #007BFF;
+    color: #1331c6;
+    margin: 0;
+}
+
+/* Heading Styling */
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4458bd;
     margin: 0;
 }
 
 /* Centered Box */
 .container {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.3); /* More transparency for better blending */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Softer rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft diffused shadow */
     width: 320px;
+    margin-right: 20px; /* Added space on the right */
+    backdrop-filter: blur(15px); /* Stronger blur for a glassy effect */
+    -webkit-backdrop-filter: blur(15px); /* Ensures compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Light border to blend edges */
 }
+
+
+
 
 /* Input & Button Styling */
 input, button {
     display: block;
-    width: 100%;
-    margin: 10px 0;
+    width: 90%;
+    margin: 10px auto;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;

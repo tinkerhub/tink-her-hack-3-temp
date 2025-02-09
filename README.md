@@ -1,14 +1,14 @@
-# [Project Name] 🎯
+# find AND read 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [CREW]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [SNEHA] - [SSET]
+- Member 2: [SANIYA] - [SSET]
+- Member 3: [ZEBA] - [SSET]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
