@@ -1,0 +1,427 @@
+* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    text-align: center;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  text-align: center;
+}
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+div {
+  display: block;
+  unicode-bidi: isolate;
+  text-align: center;
+}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    z-index: 100;
+    text-align: center;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar li {
+    margin: 0 15px;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navbar a:hover {
+    color: #f8b400;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(45deg, #ff6b6b, #f8b400);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    animation: gradientBackground 6s ease infinite;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .cta-button {
+    background-color: #f8b400;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .cta-button:hover {
+    background-color: #e0a800;
+  }
+  
+  @keyframes gradientBackground {
+    0% {
+      background: linear-gradient(45deg, #ff6b6b, #f8b400);
+    }
+    50% {
+      background: linear-gradient(45deg, #4b6cb7, #182848);
+    }
+    100% {
+      background: linear-gradient(45deg, #ff6b6b, #f8b400);
+    }
+  }
+  
+  /* Donation Section */
+  .donation-section {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .donation-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  input[type="number"] {
+    margin: 10px;
+  }
+  
+  button {
+    background-color: #f8b400;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #e0a800;
+  }
+  
+  .frequency-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .frequency-options label {
+    margin: 0 15px;
+  }
+  
+  /* Impact Section */
+  .impact-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .impact-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .stat {
+    background-color: #f8b400;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .stat h3 {
+    font-size: 2rem;
+  }
+  }
+  /* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f8b400;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #f8b400;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #e0a800;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+ 
+}
+
+.social-links a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.5rem;
+ 
+}
+
+.social-links a:hover {
+  color: #f8b400;
+
+}
+.social-media-section {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  
+}
+
+.social-media-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  background-color:#E0F7FA;
+ 
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+  h2 {
+    display: block;
+    font-size: 2.5em;
+    margin-block-start:0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    padding: center;
+}
+  
+  .hero {
+    background-image: url('charity-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color:#780e0e;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .causes-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .cause {
+    background: #fffdfd;
+    box-shadow: 0 20px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 45px;
+    max-width: 306px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cause img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .impact-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat {
+    margin-bottom: 20px;
+  }
+  .footer {
+    background: #333;
+    color:#E0F7FA;;
+    padding: 20px 0;
+    text-align: center;
+    display:;
+
+}
+.content {
+  min-height: 90vh; /* Ensures content takes up most of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+.footer-logo-container {
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  transform: translate(-50%,-50%);
+  width: 120px; /* Adjust the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  
+
+
+}
+
+footer p {
+  font-size: 14px; /* Smaller font for footer text */
+  margin: 0;
+}
+
+
+footer a {
+    color: #3b3636;
+    text-decoration: none;
+}
+ }
