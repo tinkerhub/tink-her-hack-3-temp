@@ -84,8 +84,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Gayathri](https://github.com/Gayathri24-student) 
-- [Suhana](https://github.com/Suhana24-student) 
+- [Gayathri](https://github.com/Gayathri24-student) - project owner 
+- [Suhana](https://github.com/Suhana24-student) - frontend development,Design Improvements, Debugging 
 
 ---
 Made with ❤️ at TinkerHub
