@@ -84,9 +84,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Gayathri](https://github.com/Gayathri24-student) 
+- [Suhana](https://github.com/Suhana24-student) 
 
 ---
 Made with ❤️ at TinkerHub
